@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="developer" content="Chaimir Ann Boston" />
+  <title>Login and Registration Forms</title>
+</head>
+	<!-- Note: Asked Chatgpt on how to set fonts(color/stlye), and text-aligment -->	
+<body style="font-family:Arial, sans-serif; background:#FCF5EE; padding:20px; color:black;">
+  <h1 style="text-align:center">Login and Registration</h1>
+
+  <!-- Login Form -->
+  <form style="background:#FFC4C4; border:1px solid black; padding:20px; border-radius:12px; max-width:900px; margin:auto; margin-bottom:25px;">
+    <h2 style="text-align:center; color:black;">Login Page</h2>
+	
+	<!-- Note 2.0: Asked Chatgpt and Google on how to do two columns -->
+
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+	
+    <!-- Column 1 -->
+	<!-- Username for Login -->
+    <div style="flex:1; min-width:250px;">
+      <label for="loginUser" style="font-weight:bold; color:black;">Username</label><br>
+      <input
+        type="text"
+        id="loginUser"
+        name="loginUser"
+        placeholder="Enter username"
+        required
+        pattern="^[A-Za-z0-9_]{4,15}$"
+        title="Username must be 4 to 15 characters. Only letters, numbers, and underscore are allowed."
+        style="width:100%; padding:8px; margin-top:5px; margin-bottom:15px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+      />
+    </div>
+	
+    <!-- Column 2 -->
+	<!-- Password for Login -->
+    <div style="flex:1; min-width:250px;">
+      <label for="loginPass" style="font-weight:bold; color:black;">Password</label><br>
+      <input
+        type="password"
+        id="loginPass"
+        name="loginPass"
+        placeholder="Enter password"
+        required
+        pattern=".{6,}"
+        title="Password must be at least 6 characters long."
+        style="width:100%; padding:8px; margin-top:5px; margin-bottom:15px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+      />
+    </div>
+    </div>
+	
+	<!-- Forgot Password -->
+	<div style="text-align:right; margin-bottom:15px;">
+      <a href="#" style="font-size:10px; color:black; text-decoration:none;">Forgot Password?</a>
+    </div>
+
+    <button type="submit" style="width:200px; padding:12px; background:#EE6983; border:none; border-radius:8px; color:black; font-size:16px;">
+      Login
+    </button>
+  </form>
+
+  <!-- Registration Form -->
+  <form style="background:#E49BA6; border:1px solid black; padding:20px; border-radius:12px; max-width:900px; margin:auto;">
+    <h2 style="text-align:center; color:white;">Registration Form</h2>
+
+    <!-- Account Info -->
+    <fieldset style="border:1px solid black; padding:15px; margin-bottom:20px;">
+      <legend style="font-weight:bold; color:white;">Account Info</legend>
+	  
+	<!-- Note 3.0: For the two-column layout with rows, I asked ChatGPT how to place the Username on the right-side column in the first row since I added Full Name -->
+	
+      <!-- Row 1 -->
+	  <!-- Full Name -->
+      <div style="display:flex; gap:20px; margin-bottom:15px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:250px;">
+          <label for="fullName" style="font-weight:bold; color:white;">Full Name</label><br>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Dela Cruz, Juan A."
+            required
+            pattern="^[A-Za-z0-9, .]+$"
+            title="Full name must only contain letters, numbers, comma, period, and spaces."
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          />
+        </div>
+
+	<!-- Username for Register-->
+        <div style="flex:1; min-width:250px;">
+          <label for="regUser" style="font-weight:bold; color:white;">Username</label><br>
+          <input
+            type="text"
+            id="regUser"
+            name="regUser"
+            placeholder="Enter username"
+            required
+            pattern="^[A-Za-z0-9_]{4,15}$"
+            title="Username must be 4 to 15 characters. Only letters, numbers, and underscore are allowed."
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          />
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+	  <!-- Password for Register -->
+      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:250px;">
+          <label for="regPass" style="font-weight:bold; color:white;">Password</label><br>
+          <input
+            type="password"
+            id="regPass"
+            name="regPass"
+            placeholder="Enter password"
+            required
+            pattern=".{6,}"
+            title="Password must be at least 6 characters long."
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          />
+        </div>
+
+	<!-- Confirm Password -->
+        <div style="flex:1; min-width:250px;">
+          <label for="regConfirm" style="font-weight:bold; color:white;">Confirm Password</label><br>
+          <input
+            type="password"
+            id="regConfirm"
+            name="regConfirm"
+            placeholder="Confirm password"
+            required
+            pattern=".{6,}"
+            title="Confirm password must be at least 6 characters long."
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          />
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Contact Info -->
+    <fieldset style="border:1px solid black; padding:15px; margin-bottom:20px;">
+      <legend style="font-weight:bold; color:white;">Contact Info</legend>
+
+	<!-- Email Address -->
+      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+      <div style="flex:1; min-width:250px;">
+        <label for="email" style="font-weight:bold; color:white;">Email Address</label><br>
+        <input
+          type="email"
+          id="email"
+          name="email"
+		  autocomplete="email"
+          placeholder="yourname@example.com"
+          required
+          title="Please enter a valid email address (example: yourname@example.com)."
+          style="width:100%; padding:8px; margin-top:5px; margin-bottom:15px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+        />
+      </div>
+
+	<!-- Phone Number -->
+      <div style="flex:1; min-width:250px;">
+        <label for="phoneNo" style="font-weight:bold; color:white;">Phone Number</label><br>
+        <input
+          type="tel"
+          id="phoneNo"
+          name="phoneNo"
+          placeholder="123-4567-8910"
+          required
+          pattern="^\d{3}-\d{4}-\d{4}$"
+          title="Phone number must follow this format: 123-4567-8910"
+          style="width:100%; padding:8px; margin-top:5px; margin-bottom:15px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+        />
+      </div>
+
+      </div>
+
+	<!-- Street Address -->
+      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+      <div style="flex:1; min-width:250px;">
+        <label for="streetAddress" style="font-weight:bold; color:white;">Street Address</label><br>
+        <input
+          type="text"
+          id="streetAddress"
+          name="streetAddress"
+          placeholder="Enter address"
+          required
+          title="Please enter your address."
+          style="width:100%; padding:8px; margin-top:5px; margin-bottom:15px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+        />
+      </div>
+
+    <!-- Country -->
+      <div style="flex:1; min-width:250px;">
+        <label for="country" style="font-weight:bold; color:white;">Country</label><br>
+        <select
+          id="country"
+          name="country"
+		  autocomplete="email"
+          required
+          title="Please select your country."
+          style="width:100%; padding:8px; margin-top:5px; margin-bottom:15px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          onchange="updateCities()"
+        >
+          <option value="">Select Country</option>
+          <option value="philippines">Philippines</option>
+          <option value="japan">Japan</option>
+          <option value="china">China</option>
+          <option value="southkorea">South Korea</option>
+          <option value="malaysia">Malaysia</option>
+        </select>
+      </div>
+
+      </div>
+
+    <!-- City -->
+      <div style="display:flex; gap:20px; margin-bottom:15px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:250px;">
+          <label for="city" style="font-weight:bold; color:white;">City</label><br>
+          <select
+            id="city"
+            name="city"
+            required
+            title="Please select your city."
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          >
+            <option value="">Select City</option>
+          </select>
+        </div>
+		
+		 <!-- Note 4.0: Asked Chatgpt and search in Google on how to call the set of city/province when the country is selected -->
+
+	<!-- City Options -->
+  <script>
+    function updateCities() {
+      var country = document.getElementById("country").value;
+      var city = document.getElementById("city");
+
+      city.innerHTML = "<option value=''>Select City</option>";
+
+      const cities = {
+        philippines: ["Abra","Agusan del Norte","Agusan del Sur","Aklan","Alaminos","Albay","Angeles","Antipolo",
+        "Apayao","Antique","Aurora","Bacolod","Bacoor","Bago","Baguio","Bais","Balanga","Baliuag",
+        "Basilan","Bataan","Batanes","Batac","Batangas","Batangas City","Bayawan","Baybay","Bayugan",
+        "Benguet","Biliran","Biñan","Bislig","Bogo","Bohol","Borongan","Bukidnon","Bulacan","Butuan",
+        "Cabadbaran","Cabanatuan","Cabuyao","Cagayan","Cagayan de Oro","Calamba","Calapan","Calbayog",
+        "Caloocan","Camarines Norte","Camarines Sur","Camiguin","Candon","Canlaon","Capiz","Carcar",
+        "Catanduanes","Catbalogan","Cauayan","Cavite","Cavite City","Cebu","Cebu City","Cotabato",
+        "Cotabato City","Dagupan","Danao","Dapitan","Davao City","Davao de Oro","Davao del Norte",
+        "Davao del Sur","Davao Occidental","Davao Oriental","Dasmariñas","Dinagat Islands","Digos",
+        "Dipolog","Dumaguete","Eastern Samar","El Salvador","Escalante","Fuzhou","Gapan",
+        "General Santos","General Trias","Gingoog","Guimaras","Guihulngan","Hagonoy","Harbin",
+        "Himamaylan","Ilagan","Ifugao","Iligan","Ilocos Norte","Ilocos Sur","Iloilo","Iloilo City",
+        "Imus","Iriga","Isabela","Isabela City","Jinan","Kabankalan","Kalinga","Kidapawan",
+        "Koronadal","La Carlota","La Union","Laguna","Lamitan","Lanao del Norte","Lanao del Sur",
+        "Laoag","Lapu-Lapu City","Las Piñas","Legazpi","Leyte","Ligao","Lipa","Lucena","Maasin",
+        "Mabalacat","Maguindanao del Norte","Maguindanao del Sur","Makati","Malabon","Malaybalay",
+        "Malolos","Mandaluyong","Mandaue","Manila","Marawi","Marikina","Marinduque","Masbate",
+        "Masbate City","Mati","Meycauayan","Misamis Occidental","Misamis Oriental","Mountain Province",
+        "Muñoz","Muntinlupa","Naga","Naga (Cebu)","Navotas","Negros Occidental","Negros Oriental",
+        "Northern Samar","Nueva Ecija","Nueva Vizcaya","Occidental Mindoro","Olongapo","Oriental Mindoro",
+        "Ormoc","Oroquieta","Ozamiz","Pagadian","Palawan","Palayan","Pampanga","Panabo","Pangasinan",
+        "Parañaque","Pasay","Pasig","Passi","Puerto Princesa","Quezon","Quezon City","Quirino",
+        "Rizal","Romblon","Roxas City","Sagay","Samar","Samal","San Carlos (Negros Occidental)",
+        "San Carlos (Pangasinan)","San Fernando (La Union)","San Fernando (Pampanga)","San Jose",
+        "San Jose del Monte","San Juan","San Pablo","San Pedro","Sarangani","Santa Rosa","Santiago",
+        "Santo Tomas","Sorsogon","Sorsogon City","South Cotabato","Southern Leyte","Sultan Kudarat",
+        "Sulu","Surigao del Norte","Surigao del Sur","Surigao City","Siquijor","Silay","Sipalay",
+        "Tabaco","Tabuk","Tacloban","Tacurong","Tagaytay","Tagbilaran","Taguig","Tagum",
+        "Talisay (Cebu)","Talisay (Negros Occidental)","Tanauan","Tangub","Tanjay","Tarlac",
+        "Tarlac City","Tawi-Tawi","Tayabas","Toledo","Trece Martires","Tuguegarao","Urdaneta",
+        "Valencia","Valenzuela","Victorias","Vigan","Zambales","Zamboanga del Norte",
+        "Zamboanga del Sur","Zamboanga Sibugay","Zamboanga City"],
+        japan: ["Tokyo", "Yokohama", "Osaka", "Nagoya", "Sapporo", "Fukuoka",
+        "Kobe", "Kyoto", "Kawasaki", "Saitama", "Hiroshima", "Sendai",
+        "Chiba", "Kitakyushu", "Sakai", "Niigata", "Hamamatsu", "Shizuoka",
+        "Okayama", "Kumamoto", "Kagoshima", "Naha"],
+        china: ["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chengdu", "Chongqing",
+        "Tianjin", "Wuhan", "Hangzhou", "Nanjing", "Xi'an", "Shenyang",
+        "Harbin", "Suzhou", "Qingdao", "Dalian", "Zhengzhou", "Jinan",
+        "Changsha", "Kunming", "Fuzhou", "Xiamen", "Ningbo"],
+        southkorea: [ "Seoul", "Busan", "Incheon", "Daegu", "Daejeon", "Gwangju",
+        "Ulsan", "Suwon", "Changwon", "Seongnam", "Goyang", "Yongin",
+        "Cheongju", "Jeonju", "Ansan", "Anyang", "Pohang", "Gimhae",
+        "Jeju City"],
+        malaysia: [ "Kuala Lumpur", "George Town", "Johor Bahru", "Ipoh", "Shah Alam",
+        "Petaling Jaya", "Kota Kinabalu", "Kuching", "Melaka City", "Alor Setar",
+        "Miri", "Seremban", "Sandakan", "Kuantan", "Taiping", "Putrajaya",
+        "Cyberjaya", "Bintulu", "Sibu", "Batu Pahat"]
+      };
+
+      if (cities[country]) {
+        cities[country].forEach(c => {
+          city.innerHTML += `<option>${c}</option>`;
+        });
+      }
+    }
+  </script>
+
+	<!-- Zip Code -->
+        <div style="flex:1; min-width:250px;">
+          <label for="zipcode" style="font-weight:bold; color:white;">Zip Code</label><br>
+          <input
+            type="text"
+            id="zipcode"
+            name="zipcode"
+            placeholder="0000"
+            required
+            pattern="^[0-9]{4,6}$"
+            title="Zip code must contain 4 to 6 digits."
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          />
+        </div>
+      </div>
+
+    <!-- Date of Birth -->
+      <div style="display:flex; gap:20px; margin-bottom:15px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:250px;">
+          <label for="dob" style="font-weight:bold; color:white;">Date of Birth</label><br>
+          <input
+            type="text"
+            id="dob"
+            name="dob"
+            placeholder="DD-MM-YYYY"
+            required
+            pattern="^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-\d{4}$"
+            title="Date must be in this format: DD-MM-YY (example: 22-12-2000)"
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          />
+        </div>
+
+	<!-- Biological Sex -->
+        <div style="flex:1; min-width:250px;">
+          <label for="bS" style="font-weight:bold; color:white;">Biological Sex</label><br>
+          <select
+            id="bS"
+            name="bS"
+            required
+            style="width:100%; padding:8px; margin-top:5px; border:1px solid black; border-radius:6px; box-sizing:border-box;"
+          >
+            <option value="">Select Your Biological Sex</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <button type="submit" style="width:200px; padding:12px; background:#EE6983; border:none; border-radius:8px; color:white; font-size:16px;">
+      Register
+    </button>
+  </form>
+</body>
+</html>
